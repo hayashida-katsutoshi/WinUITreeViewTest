@@ -40,15 +40,15 @@ namespace WinUITreeViewTest
 
             MyItem item2 = new MyItem() { Name = "Item2" };
             root.Add(item2);
-            item1.Children.Add(new MyItem() { Name = "Item2.1" });
-            item1.Children.Add(new MyItem() { Name = "Item2.2" });
-            item1.Children.Add(new MyItem() { Name = "Item2.3" });
+            item2.Children.Add(new MyItem() { Name = "Item2.1" });
+            item2.Children.Add(new MyItem() { Name = "Item2.2" });
+            item2.Children.Add(new MyItem() { Name = "Item2.3" });
 
             MyItem item3 = new MyItem() { Name = "Item3" };
             root.Add(item3);
-            item1.Children.Add(new MyItem() { Name = "Item3.1" });
-            item1.Children.Add(new MyItem() { Name = "Item3.2" });
-            item1.Children.Add(new MyItem() { Name = "Item3.3" });
+            item2.Children.Add(new MyItem() { Name = "Item3.1" });
+            item2.Children.Add(new MyItem() { Name = "Item3.2" });
+            item2.Children.Add(new MyItem() { Name = "Item3.3" });
 
             ViewModel.MyItems = root;
 
