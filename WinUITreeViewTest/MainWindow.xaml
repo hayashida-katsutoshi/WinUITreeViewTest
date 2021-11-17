@@ -8,6 +8,12 @@
     mc:Ignorable="d">
 
     <StackPanel DataContext="MainWindowViewModel">
-        <TreeView Name="MyItemView" SelectionMode="Multiple" ItemsSource="{Binding MyItems}"/>
+        <TreeView Name="MyItemView" SelectionMode="Multiple" ItemsSource="{Binding MyItems}">
+            <TreeView.ItemTemplate>
+                <DataTemplate x:DataType="local:MyItem">
+                    <TreeViewItem ItemsSource="{Binding Children}" Content="{Binding Name}" IsExpanded="{Binding IsExpanded}" IsSelected="{Binding IsSelected}"/>
+                </DataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
     </StackPanel>
 </Window>

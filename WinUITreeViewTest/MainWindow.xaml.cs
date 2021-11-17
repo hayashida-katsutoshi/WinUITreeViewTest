@@ -29,30 +29,29 @@ namespace WinUITreeViewTest
             this.InitializeComponent();
 
             ViewModel = new MainWindowViewModel();
+            MyItemView.DataContext = ViewModel;
 
             ObservableCollection<MyItem> root = new ObservableCollection<MyItem>();
 
-            MyItem item1 = new MyItem() { Name = "Item1" };
+            MyItem item1 = new MyItem() { Name = "Item1", IsExpanded=true };
             root.Add(item1);
             item1.Children.Add(new MyItem() { Name = "Item1.1" });
             item1.Children.Add(new MyItem() { Name = "Item1.2" });
-            item1.Children.Add(new MyItem() { Name = "Item1.3" });
+            item1.Children.Add(new MyItem() { Name = "Item1.3", IsSelected=true });
 
-            MyItem item2 = new MyItem() { Name = "Item2" };
+            MyItem item2 = new MyItem() { Name = "Item2", IsExpanded = true };
             root.Add(item2);
             item2.Children.Add(new MyItem() { Name = "Item2.1" });
             item2.Children.Add(new MyItem() { Name = "Item2.2" });
             item2.Children.Add(new MyItem() { Name = "Item2.3" });
 
-            MyItem item3 = new MyItem() { Name = "Item3" };
+            MyItem item3 = new MyItem() { Name = "Item3", IsExpanded = true };
             root.Add(item3);
-            item2.Children.Add(new MyItem() { Name = "Item3.1" });
-            item2.Children.Add(new MyItem() { Name = "Item3.2" });
-            item2.Children.Add(new MyItem() { Name = "Item3.3" });
+            item3.Children.Add(new MyItem() { Name = "Item3.1" });
+            item3.Children.Add(new MyItem() { Name = "Item3.2" });
+            item3.Children.Add(new MyItem() { Name = "Item3.3" });
 
             ViewModel.MyItems = root;
-
-            MyItemView.DataContext = ViewModel;
         }
 
         MainWindowViewModel ViewModel;

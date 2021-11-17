@@ -19,7 +19,8 @@ namespace WinUITreeViewTest
     [ViewModel]
     public partial class MyItem
     {
-        public string Name { get; set; }
+        [Property]
+        private string name;
 
         public override string ToString() => Name;
 
